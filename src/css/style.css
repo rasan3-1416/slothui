@@ -7,10 +7,10 @@
   /* Colors */
   --primary-color: #4f46e5;
   --text-color: #475569;
-  --header_color: #1e293b;
+  --header-color: #1e293b;
   --border-color: #cbd5e1;
   --sub-title-bg: #eef2ff;
-  --section_bg_alt: #f8fafc;
+  --section-bg-alt: #f8fafc;
 }
 *,
 *::before,
@@ -35,7 +35,7 @@ h2,
 h3,
 h4,
 h5 {
-  color: var(--header_color);
+  color: var(--header-color);
   margin: 0;
   padding: 0;
 }
@@ -73,6 +73,9 @@ ol {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+hr {
+  border: 1px solid var(--border-color);
 }
 
 /* Component Styles */
@@ -138,6 +141,9 @@ table {
 .no_x_scroll {
   overflow-x: hidden;
 }
+.offwhite {
+  background-color: var(--section-bg-alt);
+}
 .section {
   padding: clamp(4rem, 8vw, 6rem) 0;
 }
@@ -152,6 +158,20 @@ table {
 }
 .section_description {
   font-size: clamp(18px, 4vw, 20px);
+}
+.sub_badge {
+  width: clamp(48px, 6vw, 56px);
+  height: clamp(48px, 6vw, 56px);
+  border-radius: 123px;
+  background-color: var(--sub-title-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.sub_badge img {
+  width: clamp(24px, 6vw, 28px);
+  height: clamp(24px, 6vw, 28px);
 }
 /* Hero Bg */
 .hero {
@@ -304,9 +324,6 @@ table {
   filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
 }
 /* Social Section Styles */
-.social {
-  background-color: var(--section_bg_alt);
-}
 .social_content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -355,6 +372,44 @@ table {
   letter-spacing: clamp(-0.128px, 0.1vw, -0.16px);
   margin-bottom: 8px;
 }
+/* Statistics Section Styles */
+.statistics .container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+}
+.statistics_content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: clamp(16px, 2vw, 20px);
+  max-width: 800px;
+  margin: 0 auto;
+}
+.statistics_grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.statistics_grid_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.statistics_grid_content .value {
+  font-size: 3.75rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  line-height: 68px;
+  letter-spacing: -0.288px;
+}
+.statistics_grid_content .name {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.128px;
+}
 
 /* Styles Applied to min-width beyond 576px */
 @media (min-width: 576px) {
@@ -371,6 +426,12 @@ table {
   }
   .features_grid_item {
     max-width: 384px;
+  }
+  /* Statistic Section */
+  .statistics_grid {
+    flex-direction: row;
+    column-gap: 1rem;
+    justify-content: center;
   }
 }
 /* Styles Applied to min-width beyond 1024px */
