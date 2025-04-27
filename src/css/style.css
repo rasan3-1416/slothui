@@ -9,6 +9,7 @@
   --text-color: #475569;
   --header-color: #1e293b;
   --border-color: #cbd5e1;
+  --border-alt-color: #e0e7ff;
   --sub-title-bg: #eef2ff;
   --section-bg-alt: #f8fafc;
 }
@@ -410,9 +411,68 @@ hr {
   line-height: 24px;
   letter-spacing: -0.128px;
 }
+/* Procastinator Section Styles */
+.procas .container {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(40px, 5vw, 64px);
+}
+.procas_content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 680px;
+}
+.procas_content .sub_title {
+  margin: 0 0;
+}
+.procas_grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.procas_options {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  max-width: 680px;
+}
+.procas_options_item {
+  display: flex;
+  column-gap: 24px;
+}
+.procas_options_item hr {
+  border: 2px solid var(--border-alt-color);
+  border-radius: 0.5rem;
+}
+.procas_options_item:first-of-type hr {
+  border: 2px solid var(--primary-color);
+}
+.procas_options_item div {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  max-width: 468px;
+}
+.procas_options_item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+.procas_grid img {
+  width: 343px;
+  height: 343px;
+  margin: 0 auto;
+}
 
 /* Styles Applied to min-width beyond 576px */
 @media (min-width: 576px) {
+  /* Procastinators Section */
+  .procas_grid img {
+    width: 360px;
+    height: 360px;
+  }
 }
 /* Styles Applied to min-width beyond 768px */
 @media (min-width: 768px) {
@@ -431,6 +491,11 @@ hr {
   .statistics_grid {
     flex-direction: row;
     justify-content: center;
+  }
+  /* Procastinators Section */
+  .procas_grid img {
+    width: 420px;
+    height: 420px;
   }
 }
 /* Styles Applied to min-width beyond 1024px */
@@ -462,6 +527,17 @@ hr {
   .features_grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  /* Procastinators Section */
+  .procas_grid {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .procas_grid img {
+    width: 480px;
+    height: 480px;
+    margin: 0 0;
+  }
 }
 /* Styles Applied to min-width beyond 1216px */
 @media (min-width: 1216px) {
@@ -469,5 +545,10 @@ hr {
   .social_content {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 96px;
+  }
+  /* Procastinators Section */
+  .procas_grid img {
+    width: 592px;
+    height: 592px;
   }
 }
