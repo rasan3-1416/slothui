@@ -40,10 +40,6 @@ h5 {
   padding: 0;
 }
 
-p {
-  font-size: clamp(18px, 4vw, 20px);
-}
-
 img,
 picture,
 video,
@@ -123,6 +119,7 @@ table {
   line-height: clamp(44px, 6vw, 68px);
   letter-spacing: clamp(-0.014em, -0.016em, -0.018em);
 }
+
 /* Utility Styles */
 .container {
   max-width: 1216px;
@@ -142,7 +139,19 @@ table {
   overflow-x: hidden;
 }
 .section {
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+.section_alt {
   padding: 4rem 0;
+}
+.section_title {
+  font-weight: 800;
+  font-size: clamp(30px, 5vw, 36px);
+  line-height: clamp(36px, 6vw, 38px);
+  letter-spacing: clamp(-0.208px, 0.1vw, -0.224px);
+}
+.section_description {
+  font-size: clamp(18px, 4vw, 20px);
 }
 /* Hero Bg */
 .hero {
@@ -308,6 +317,44 @@ table {
   width: clamp(96px, 10vw, 144px);
   height: clamp(64px, 6vw, 96px);
 }
+/* Features Section Styles */
+.features .container {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(3rem, 5vw, 4rem);
+}
+.features_content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2vw, 24px);
+  max-width: 800px;
+  margin: 0 auto;
+}
+.features_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  place-items: center;
+}
+.features_grid_item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+  max-width: 450px;
+}
+.features_grid_item img {
+  width: clamp(60px, 8vw, 80px);
+  height: clamp(60px, 8vw, 80px);
+  margin: 0 auto;
+}
+.features_grid_item h4 {
+  font-size: clamp(18px, 5vw, 20px);
+  line-height: clamp(24px, 6vw, 28px);
+  letter-spacing: clamp(-0.128px, 0.1vw, -0.16px);
+  margin-bottom: 8px;
+}
 
 /* Styles Applied to min-width beyond 576px */
 @media (min-width: 576px) {
@@ -317,6 +364,13 @@ table {
   /* Social Section */
   .social_content {
     grid-template-columns: repeat(4, 1fr);
+  }
+  /* Features Section */
+  .features_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .features_grid_item {
+    max-width: 384px;
   }
 }
 /* Styles Applied to min-width beyond 1024px */
@@ -343,6 +397,10 @@ table {
   .social_content {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 78px;
+  }
+  /* Features Section */
+  .features_grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 /* Styles Applied to min-width beyond 1216px */
