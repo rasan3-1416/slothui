@@ -10,6 +10,7 @@
   --header_color: #1e293b;
   --border-color: #cbd5e1;
   --sub-title-bg: #eef2ff;
+  --section_bg_alt: #f8fafc;
 }
 *,
 *::before,
@@ -190,6 +191,7 @@ table {
   top: -100%;
   background-color: white;
   font-weight: 700;
+  z-index: 1000;
 }
 .mobile_menu.open {
   top: 0;
@@ -292,12 +294,30 @@ table {
   z-index: 200;
   filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
 }
+/* Social Section Styles */
+.social {
+  background-color: var(--section_bg_alt);
+}
+.social_content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 2rem;
+}
+.social_content img {
+  width: clamp(96px, 10vw, 144px);
+  height: clamp(64px, 6vw, 96px);
+}
 
 /* Styles Applied to min-width beyond 576px */
 @media (min-width: 576px) {
 }
 /* Styles Applied to min-width beyond 768px */
 @media (min-width: 768px) {
+  /* Social Section */
+  .social_content {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 /* Styles Applied to min-width beyond 1024px */
 @media (min-width: 1024px) {
@@ -319,7 +339,17 @@ table {
   .home_img_2 {
     right: 0;
   }
+  /* Social Section */
+  .social_content {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 78px;
+  }
 }
 /* Styles Applied to min-width beyond 1216px */
 @media (min-width: 1216px) {
+  /* Social Section */
+  .social_content {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 96px;
+  }
 }
