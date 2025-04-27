@@ -12,6 +12,7 @@
   --border-alt-color: #e0e7ff;
   --sub-title-bg: #eef2ff;
   --section-bg-alt: #f8fafc;
+  --golden-color: #f59e0b;
 }
 *,
 *::before,
@@ -173,6 +174,13 @@ hr {
 .sub_badge img {
   width: clamp(24px, 6vw, 28px);
   height: clamp(24px, 6vw, 28px);
+}
+.golden-fill {
+  color: var(--golden-color);
+}
+.golden-stroke {
+  -webkit-text-stroke: 1px var(--golden-color);
+  color: transparent;
 }
 /* Hero Bg */
 .hero {
@@ -465,13 +473,77 @@ hr {
   height: 343px;
   margin: 0 auto;
 }
-
+/* Testimonial Section Styles */
+.testimonials .container {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(2rem, 4vw, 4rem);
+}
+.testimonials_content {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(20px, 2vw, 24px);
+  text-align: center;
+}
+.testimonials_root {
+  display: grid;
+  grid-template-columns: 343px;
+  gap: 2rem;
+  justify-content: center;
+}
+.testimonial_card {
+  padding: 20px;
+  border: 1px solid var(--border-alt-color);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.testimonial_card .rating {
+  font-size: 25px;
+}
+.testimonial_card .author {
+  display: flex;
+  gap: 12px;
+}
+.testimonial_card .author img {
+  width: 40px;
+  height: 40px;
+}
+.testimonial_card .author div {
+  display: flex;
+  flex-direction: column;
+}
+.testimonial_card .author .name {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.testimonial_card .author .designation {
+  font-size: 14px;
+}
+.testimonials .load_btn {
+  width: 343px;
+  margin: 0 auto;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: calc(-0.6% * 16);
+  background-color: var(--primary-color);
+  border-radius: 1234px;
+  justify-self: center;
+}
 /* Styles Applied to min-width beyond 576px */
 @media (min-width: 576px) {
   /* Procastinators Section */
   .procas_grid img {
     width: 360px;
     height: 360px;
+  }
+  /* Testimonial Section */
+  .testimonials_root {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 /* Styles Applied to min-width beyond 768px */
@@ -496,6 +568,10 @@ hr {
   .procas_grid img {
     width: 420px;
     height: 420px;
+  }
+  /* Testimonial Section */
+  .testimonials_root {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 /* Styles Applied to min-width beyond 1024px */
@@ -537,6 +613,10 @@ hr {
     width: 480px;
     height: 480px;
     margin: 0 0;
+  }
+  /* Testimonial Section */
+  .testimonials_root {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 /* Styles Applied to min-width beyond 1216px */

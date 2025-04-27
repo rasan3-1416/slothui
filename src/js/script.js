@@ -24,3 +24,30 @@ window.addEventListener("scroll", () => {
     header.classList.remove("fixed_top");
   }
 });
+
+// Testimonial Load Functionality
+const loadBtn = document.getElementById("loadBtn");
+const testimonialsRoot = document.getElementById("testimonialsRoot");
+const testimonialCards = testimonialsRoot.querySelectorAll("#testimonialCard");
+let currentCardShown = 3;
+
+if (window.innerWidth <= 1024) {
+  testimonialCards.forEach((card, index) => {
+    if (index > currentCardShown) {
+      card.style.display = "none";
+    }
+  });
+
+  loadBtn.addEventListener("click", () => {
+    let cards = Array.from(testimonialCards);
+    for (let i = currentCardShown + 1; i < currentCardShown + 3; i++) {
+      cards[i].style.display = "inline-block";
+    }
+    currentCardShown += 3;
+    if (currentCardShown >= cards.length) {
+      loadBtn.style.display = "none";
+    }
+  });
+} else {
+  loadBtn.style.display = "none";
+}
